@@ -176,6 +176,22 @@ button:hover {
   background: rgba(122, 104, 86, 0.08);
 }
 
+.menu-toggle-btn {
+  display: none;
+  padding: 8px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--nav-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+:root[data-theme="light"] .menu-toggle-btn {
+  background: rgba(122, 104, 86, 0.08);
+}
+
 .hero-section {
   position: relative;
   height: 100vh;
@@ -849,6 +865,10 @@ button:hover {
   color: var(--accent);
 }
 
+.footer-text-link.is-active {
+  color: var(--ink);
+}
+
 .footer-col-title {
   margin: 0 0 16px;
   font-size: 14px;
@@ -882,6 +902,17 @@ button:hover {
 }
 
 @media (max-width: 1024px) {
+  .nav-pill {
+    width: calc(100vw - 48px);
+    max-width: 1100px;
+    gap: 18px;
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
   .services-grid,
   .experience-columns,
   .package-grid,
@@ -905,13 +936,50 @@ button:hover {
 @media (max-width: 768px) {
   .nav-pill {
     width: calc(100vw - 24px);
+    flex-wrap: wrap;
+    top: 12px;
     justify-content: space-between;
     gap: 12px;
     padding: 12px 16px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .menu-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-links {
     display: none;
+    width: 100%;
+    order: 10;
+    padding-top: 6px;
+    border-top: 1px solid var(--nav-border);
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-pill.menu-open .nav-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-pill.menu-open .nav-link {
+    color: var(--ink);
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+  }
+
+  .nav-pill.menu-open .nav-link:hover {
+    background: var(--panel-hover);
   }
 
   .theme-toggle-btn {
@@ -964,5 +1032,28 @@ button:hover {
   .footer-bottom-links {
     flex-wrap: wrap;
     gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-pill {
+    width: calc(100vw - 14px);
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .login-btn,
+  .theme-toggle-btn {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+
+  .hero-subtitle {
+    margin-top: 22px;
+    max-width: 92%;
   }
 }

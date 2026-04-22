@@ -191,7 +191,13 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
 
   const footerLinks = {
     socials: ["Instagram", "Facebook", "Twitter"],
-    services: ["Mobile Wash", "Bay Wash", "Interior Detail", "Ceramic Coating", "Membership"],
+    services: [
+      { label: "Services", href: "#services" },
+      { label: "The Fleet", href: "#experience" },
+      { label: "Membership", href: "#membership" },
+      { label: "Pricing", href: "#addons" },
+      { label: "Book Now", href: "#booking" },
+    ],
     legal: ["Privacy Policy", "Terms of Service", "Mandate Agreement"],
   };
 
@@ -389,7 +395,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
       <p class="footer-col-title">Services</p>
       <div class="footer-col-list">
         ${footerLinks.services
-          .map((item) => `<a href="#" class="footer-text-link">${item}</a>`)
+          .map((item) => `<a href="${item.href}" class="footer-text-link">${item.label}</a>`)
           .join("")}
       </div>
     `;
@@ -961,6 +967,37 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
     });
   }
 
+  function setupMobileMenu() {
+    const nav = document.getElementById("main-nav");
+    const menuToggle = document.getElementById("menu-toggle-btn");
+    const navLinks = document.getElementById("main-nav-links");
+    if (!nav || !menuToggle || !navLinks) return;
+
+    function closeMenu() {
+      nav.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      menuToggle.textContent = "Menu";
+    }
+
+    menuToggle.addEventListener("click", function () {
+      const open = nav.classList.toggle("menu-open");
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menuToggle.textContent = open ? "Close" : "Menu";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  }
+
   function setupBackendHooks() {
     document.addEventListener("click", function (event) {
       const target = event.target;
@@ -990,6 +1027,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
 
     setupScrollAndNav();
     setupThemeToggle();
+    setupMobileMenu();
     setupHeroThreeBackground();
     setupHeroAnimations();
     setupSectionScrollAnims();
