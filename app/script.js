@@ -92,7 +92,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
       description:
         "Full interior restoration. Leather conditioning, steam sanitization, and meticulous vacuuming of every surface.",
       price: "From R350",
-      image: "/public/images/service-interior.jpg",
+      image: "./public/images/service-interior.jpg",
       features: ["Leather conditioning", "Steam sanitization", "Carpet deep clean", "Odor elimination"],
     },
     {
@@ -101,7 +101,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
       description:
         "Paint correction and ceramic coating application. Hydrophobic protection that lasts for years, not weeks.",
       price: "From R1,200",
-      image: "/public/images/service-exterior.jpg",
+      image: "./public/images/service-exterior.jpg",
       features: ["Paint correction", "Ceramic coating", "Hydrophobic finish", "UV protection"],
     },
   ];
@@ -115,16 +115,16 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
   ];
 
   const gridImages = [
-    "/public/images/grid-1.jpg",
-    "/public/images/grid-2.jpg",
-    "/public/images/grid-3.jpg",
-    "/public/images/grid-4.jpg",
-    "/public/images/grid-7.jpg",
-    "/public/images/grid-5.jpg",
-    "/public/images/grid-6.jpg",
-    "/public/images/grid-8.jpg",
-    "/public/images/grid-9.jpg",
-    "/public/images/grid-10.jpg",
+    "./public/images/grid-1.jpg",
+    "./public/images/grid-2.jpg",
+    "./public/images/grid-3.jpg",
+    "./public/images/grid-4.jpg",
+    "./public/images/grid-7.jpg",
+    "./public/images/grid-5.jpg",
+    "./public/images/grid-6.jpg",
+    "./public/images/grid-8.jpg",
+    "./public/images/grid-9.jpg",
+    "./public/images/grid-10.jpg",
   ];
 
   const packages = [
@@ -639,7 +639,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.m
     });
 
     const video = document.createElement("video");
-    video.src = "/public/videos/hero-fluid.mp4";
+    video.src = "./public/videos/hero-fluid.mp4";
     video.loop = true;
     video.muted = true;
     video.playsInline = true;
