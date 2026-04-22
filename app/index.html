@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INT216D CarWash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <nav id="main-nav" class="nav-pill">
+        <a href="#" class="brand" data-scroll-top="true">INT216D</a>
+        <div class="nav-links">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#experience" class="nav-link">The Fleet</a>
+          <a href="#membership" class="nav-link">Membership</a>
+          <a href="#booking" class="nav-link">Book Now</a>
+        </div>
+        <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle light mode">
+          Light
+        </button>
+        <a href="#booking" id="login-btn" data-action="login" class="pill-btn login-btn">Login</a>
+      </nav>
+
+      <section id="hero" class="hero-section">
+        <div id="hero-three" class="hero-bg"></div>
+        <div class="hero-content">
+          <div id="hero-title" class="hero-title">
+            <div class="line-wrap"><h1 class="hero-line">A Premium</h1></div>
+            <div class="line-wrap"><h1 class="hero-line">Automotive</h1></div>
+            <div class="line-wrap"><h1 class="hero-line accent">Care</h1></div>
+            <div class="line-wrap"><h1 class="hero-line">Experience.</h1></div>
+          </div>
+          <p id="hero-subtitle" class="hero-subtitle">We don't just wash cars. We restore them.</p>
+          <a id="hero-cta" href="#booking" data-action="book-wash" class="hero-cta">Book a Wash</a>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div id="services-header" class="section-header">
+            <p class="eyebrow">What We Offer</p>
+            <h2>Our Signature Services</h2>
+          </div>
+          <div id="services-cards" class="services-grid"></div>
+
+          <div class="method-grid" id="method-grid"></div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience-section">
+        <div class="experience-stage">
+          <div id="experience-grid" class="experience-grid"></div>
+          <div id="experience-content" class="experience-overlay">
+            <div class="experience-columns">
+              <div class="experience-col" id="exp-col-bay"></div>
+              <div class="experience-col" id="exp-col-mobile"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="addons" class="section">
+        <div class="container">
+          <div id="addons-header" class="section-header">
+            <p class="eyebrow">Pricing &amp; Packages</p>
+            <h2>The Complete Catalogue</h2>
+          </div>
+          <div id="package-grid" class="package-grid"></div>
+          <h3 class="subhead">Optional Extras</h3>
+          <div id="addons-grid" class="addons-grid"></div>
+        </div>
+      </section>
+
+      <section id="membership" class="section membership-section">
+        <canvas id="beam-canvas" class="beam-canvas"></canvas>
+        <div class="container membership-content">
+          <div id="membership-card" class="membership-card"></div>
+          <div id="tiers-grid" class="tiers-grid"></div>
+        </div>
+      </section>
+
+      <section id="booking" class="section booking-section">
+        <div class="booking-gradient"></div>
+        <div id="booking-content" class="container booking-content"></div>
+      </section>
+
+      <section id="footer" class="footer-section">
+        <div class="iridescent-wrap">
+          <canvas id="iridescent-canvas"></canvas>
+        </div>
+        <div class="container footer-content">
+          <div class="footer-grid">
+            <div class="footer-col wide" id="footer-brand"></div>
+            <div class="footer-col" id="footer-services"></div>
+            <div class="footer-col" id="footer-contact"></div>
+          </div>
+          <div class="footer-bottom" id="footer-bottom"></div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
